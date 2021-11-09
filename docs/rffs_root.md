@@ -31,16 +31,17 @@
 **FSH_RootCylinder**
 > A short value that defines the cylinder of the location of the FS root, this
 > value should be assigned when the FS has been created and should remain a
-> constant.
+> constant. Value is 0 based.
 
 **FSH_RootSector**
 > A short value that defines the sector of the location of the FS root, this
 > value should be assigned when the FS has been created and should remain a
-> constant.
+> constant. Value is 1 based.
 
 **FSH_RootHead**
 > A short value that defines the head of the location of the FS root, this value
 > should be assigned when the FS has been created and should remain a constant.
+> Value is 0 based.
 
 ## RootData
 **BootDrive**

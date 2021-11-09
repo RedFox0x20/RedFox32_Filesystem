@@ -37,7 +37,7 @@ FSH_NumSectors: dw 18          ; Number of sectors per cylinder
 
 ; These values are where we can find the root of the FS
 FSH_RootCylinder: dw 0         ; Root cylinder, 0 based
-FSH_RootSector: dw 1           ; Root sector, 0 based
+FSH_RootSector: dw 2           ; Root sector, 1 based
 FSH_RootHead: dw 0             ; Root head, 0 based
 
 
