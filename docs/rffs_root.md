@@ -42,6 +42,26 @@
 > A short value that defines the head of the location of the FS root, this value
 > should be assigned when the FS has been created and should remain a constant.
 
+## RootData
+**BootDrive**
+> A byte value that contains the DiskID as set by the BIOS. The value is
+> stored in the bl register. ((There may be exceptions to this rule
+> that I am unaware of.))
+
+## Code
+**Root_Main**
+> Root main is where the bootloader code begins, here the bootloader would do
+> some initialisation in addition to loading the second bootloader stage,
+> sometimes this would also be where the kernel is loaded however in most cases
+> a two stage bootloader is likely to be used as they are much easier to
+> implement.
+
+**STOP**
+> STOP provides a forever loop that disables interrupts and halts the CPU, this
+> is in effect a _shutdown_ however it does not turn the system off, only
+> halting the CPU.
+
+## Additional Data
 **BootSignature**
 > The boot signature is a global standard that is defined by the BIOS system.
 > The byte pair `0xAA55` identifies to the BIOS that the disk is a bootable
