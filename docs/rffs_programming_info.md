@@ -23,6 +23,7 @@ An example `FS_DISK_MAP_SIZE` would be `360` for a 3.5" 1.44MB floppy.
 
 ## STRUCTURES
 **FS Root**
+
 Identifier
 > 4 character string constant "RFFS"
 Disk Map
@@ -31,32 +32,44 @@ Root Pointer
 > A FS\_CHS\_Address structure
 
 **CHS Address**
+
 Cylinder
 > A short (2 byte) unsigned integer
+
 Head
 > A short (2 byte) unsigned integer
+
 Sector
 > A short (2 byte) unsigned integer
 
 **Directory Map**
+
 Directory Map Identifier
 > 7 character null terminated string constant "RFFS\_DM",0
+
 Directory Map Entries
 > An array of "Directory Map Entry" structures of size
+
 Parent Directory
 > A CHS Address Structure
+
 Directory Expansion
 > A CHS Address Structure
 
 **Directory Map Entry**
+
 Attribute flags
 > A short value containing bit flags (defined as FS\_FLAG\_[Type])
+
 Name
 > 8 character string
+
 Location
 > A CHS Address structure
+
 Size
 > A long (4 byte) integer containing the number of sectors used for the file
+
 Reserved
 > 4 Reserved bytes which have an undetermined value, provides an even number of
 > bytes for best data storage and access efficiency.
