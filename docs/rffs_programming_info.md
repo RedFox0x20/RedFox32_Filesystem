@@ -2,13 +2,14 @@
 
 ## CONSTANTS
 
-_The following values are in Bytes_
-```C
-FS_ROOT_SIZE = 2048
-FS_DISK_MAP_SIZE = (Num Cylinders * Num Sectors per Cylinder * Num Heads) / 8
-FS_DIRECTORY_MAP_SIZE = 2048
-FS_DIRECTORY_ENTRY_SIZE = 24 Bytes
-FS_DIRECTORY_MAP_NUM_ENTRIES = 83 Bytes
+```
+FS_ROOT_SIZE = 2048 Bytes
+FS_DISK_MAP_SIZE =
+    ((Num Cylinders * Num Sectors per Cylinder * Num Heads) / 8) Bytes
+
+FS_DIRECTORY_MAP_SIZE = 2048 Bytes
+FS_DIRECTORY_MAP_ENTRY_SIZE = 24 Bytes
+FS_DIRECTORY_MAP_NUM_ENTRIES = 83
 
 FS_FLAG_EXECUTE = 0b 0000 0000 0000 0001
 FS_FLAG_WRITE   = 0b 0000 0000 0000 0010
@@ -18,7 +19,7 @@ FS_FLAG_SYSTEM  = 0b 0000 0001 0000 0000
 FS_FLAG_FREE    = 0b 1000 0000 0000 0000
 ```
 
-An example `FS_DISK_MAP_SIZE` would be `1440` for a 3.5" 1.44MB floppy.
+An example `FS_DISK_MAP_SIZE` would be `360` for a 3.5" 1.44MB floppy.
 
 ## STRUCTURES
 **FS Root**
@@ -41,13 +42,13 @@ Sector
 Directory Map Identifier
 > 7 character null terminated string constant "RFFS\_DM",0
 Directory Map Entries
-> An array of "Directory Entry" structures of size
+> An array of "Directory Map Entry" structures of size
 Parent Directory
 > A CHS Address Structure
 Directory Expansion
 > A CHS Address Structure
 
-**Directory Entry**
+**Directory Map Entry**
 Attribute flags
 > A short value containing bit flags (defined as FS\_FLAG\_[Type])
 Name
